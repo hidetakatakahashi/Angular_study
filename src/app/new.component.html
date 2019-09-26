@@ -1,6 +1,9 @@
 <!-- <img [src]="image?.src"> -->
 <img [src]="image?.src">
-<p [class.colorChange]="flag" [style.background-color]="bcolor">{{title}}</p>
+<p [class.colorChange]="flagON" [style.background-color]="bcolor">{{title}}</p>
+<p [style.font-size.%]="size">{{title}}</p>
 <p [class.colorChange2]="flag2">{{title}}</p>
-<button type="button" name="button" onclick="">yes</button>
+<p [style.background-color]="flagON ? bcolor : ''">{{title}}</p>
+<p [style.background-color]="flagON ? '#0ff' : ''">{{title}}</p>
+<button type="button" name="button" (click)="show()">yes</button>
 <button type="button" name="button">no</button>

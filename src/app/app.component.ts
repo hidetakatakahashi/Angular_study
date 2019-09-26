@@ -12,8 +12,9 @@ export class AppComponent {
   image = {
     src : '../image/neko.png'
   };
-  flag = "true";
+  flagON = "true";
   bcolor = "green"
+  size = "200";
   if(flag = "true"){
     flag2 = "true";
   }
