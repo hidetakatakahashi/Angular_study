@@ -15,10 +15,35 @@ export class AppComponent {
   flagON = "true";
   bcolor = "green"
   size = "200";
-  if(flag = "true"){
-    flag2 = "true";
+  // if(flag = "true"){
+  //   flag2 = "true";
+  // }
+  which = "aaa";
+  entervalue: String = "a";
+  showevent(e: String){
+    console.log(e);
   }
-  show(){
-    console.log("test");
+  show(e: String){
+    console.log(e);
+  }
+  key(e: any){
+    this.which = e.which;
+  }
+  mask(e: any){
+    let k = e.which;
+    if(!(k >= 48 && k <= 57)){
+      //数字以外の場合、入力を無視
+      e.preventDefault();
+    }
+  }
+  outer(){
+    console.log("outer");
+  }
+  inner(e: any){
+    e.stopPropagation();
+    console.log("inner");
+  }
+  enter(str: String){
+    this.entervalue = str;
   }
 }

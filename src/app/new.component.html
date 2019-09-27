@@ -1,9 +1,20 @@
-<!-- <img [src]="image?.src"> -->
 <img [src]="image?.src">
 <p [class.colorChange]="flagON" [style.background-color]="bcolor">{{title}}</p>
 <p [style.font-size.%]="size">{{title}}</p>
 <p [class.colorChange2]="flag2">{{title}}</p>
 <p [style.background-color]="flagON ? bcolor : ''">{{title}}</p>
 <p [style.background-color]="flagON ? '#0ff' : ''">{{title}}</p>
-<button type="button" name="button" (click)="show()">yes</button>
-<button type="button" name="button">no</button>
+<p>{{which}}</p>
+<button type="button" name="button" (click)="showevent($event)">yes</button>
+<!-- <input name="keydown" (keydown)="key($event)" /> -->
+<!-- <button type="button" name="button" (keydown)="key($event)">no</button> -->
+<button type="button" name="button" (keydown)="key($event)">no</button>
+<!-- <div (mousedown)="key($event)"><p>test</p></div> -->
+<input type="text" name="" value="" size="10" (keypress)="mask($event)" />
+<div id="outer" (click)="outer()">outer
+  <div id="inner" (click)="inner($event)">inner</div>
+</div>
+<input #temp value="template" (input)="show(temp.value)" />
+<input #temp2 value="template2" (change)="0" (keyup.enter)="enter(temp2.value)" />
+<p>{{temp2.value}}</p>
+<p>{{entervalue}}</p>
